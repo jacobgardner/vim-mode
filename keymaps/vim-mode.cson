@@ -97,7 +97,9 @@
   '#': 'vim-mode:reverse-search-current-word'
   'n': 'vim-mode:repeat-search'
   'N': 'vim-mode:repeat-search-backwards'
-
+  ';': 'vim-mode:open-command-line'
+  ':': 'vim-mode:open-command-line'
+  
   '1': 'vim-mode:repeat-prefix'
   '2': 'vim-mode:repeat-prefix'
   '3': 'vim-mode:repeat-prefix'
