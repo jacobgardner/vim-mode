@@ -146,6 +146,7 @@ class VimState
       'reverse-search': (e) => (new Motions.Search(@editorView, @)).reversed()
       'search-current-word': (e) => new Motions.SearchCurrentWord(@editorView, @)
       'reverse-search-current-word': (e) => (new Motions.SearchCurrentWord(@editorView, @)).reversed()
+      'open-command-line': (e) => new Motions.CommandLine(@editorView, @) 
 
   # Private: Register multiple command handlers via an {Object} that maps
   # command names to command handler functions.
@@ -433,8 +434,7 @@ class VimState
   updateStatusBar: ->
     if !$('#status-bar-vim-mode').length
       atom.packages.once 'activated', ->
-        if !$('#status-bar-vim-mode').length
-          atom.workspaceView.statusBar?.prependRight("<div id='status-bar-vim-mode' class='inline-block'>Command</div>")
+        atom.workspaceView.statusBar?.prependRight("<div id='status-bar-vim-mode' class='inline-block'>Command</div>")
 
     if @mode is "insert"
       $('#status-bar-vim-mode').html("Insert")
